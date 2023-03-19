@@ -1,5 +1,6 @@
 # IBM-Data-Science-Professional-Certificate
 ![](ibm-logo.png)
+This repository contains the summary, quiz, assignment, and project from my Professional Certificate journey.
 | Table of Content |
 | --- |
 |1. What is Data Science?
