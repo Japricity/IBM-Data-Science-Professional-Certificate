@@ -12,6 +12,18 @@ The speaker explains the difference between structured and unstructured data, no
 To explain regression, the speaker offers a relatable analogy using a taxi ride as an example. They describe how the base fare is a constant, while the fare for distance and time are variable and calculated through a relationship. Regression allows us to compute the constant and the relationship between distance/time and fare.
 
 Overall, the speaker provides a simplified and relatable explanation of regression while expressing their enthusiasm for various concepts in data science.
+## Cloud for Data Science
+The article discusses how cloud computing has revolutionized data science by providing a central storage system and advanced computing algorithms that bypass the physical limitations of computers and systems. Cloud allows data scientists to store large amounts of data and deploy advanced computing algorithms, even if they don't have access to advanced machines or their own computing environment.
+
+One of the key advantages of cloud computing is that it allows multiple entities to work with the same data simultaneously, regardless of their location. The centralization of information, algorithms, tools, and answers in the cloud makes it easier for collaborators in different locations to work together on producing a solution.
+
+Cloud-based technologies are accessible from everywhere and can be used from laptops, tablets, and even phones, making collaboration easier than ever before. The article also notes that big tech companies like IBM, Amazon, and Google offer cloud platforms that allow data scientists to become familiar with cloud-based technologies in a pre-built environment.
+
+Using the cloud for data science allows for instant access to open-source technologies like Apache Spark, without the need to install and configure them locally. Cloud computing also provides access to the most up-to-date tools and libraries without worrying about maintaining them and ensuring that they are up-to-date.
+
+In summary, cloud computing is a godsend for data scientists, as it provides a central storage system and advanced computing algorithms that bypass the physical limitations of computers and systems. It allows multiple entities to work with the same data simultaneously, regardless of their location, and it provides instant access to open-source technologies and up-to-date tools and libraries.
+
+
 
 
 
