@@ -56,13 +56,24 @@ app.layout = html.Div(children=[html.H1('SpaceX Launch Records Dashboard',
     [Input(component_id='site-dropdown', component_property='value')]
 )
 def get_pie_chart(entered_site):
-    filtered_df = spacex_df[spacex_df['class'] == 1] if entered_site != 'ALL' else spacex_df
-    fig = px.pie(
-        filtered_df,
-        names='Launch Site' if entered_site == 'ALL' else 'class',
-        title=f'Total Successful Launches for {entered_site}' if entered_site != 'ALL' else 'Total Successful Launches for All Sites'
-    )
+    if entered_site == 'ALL':
+        # Use the original DataFrame for 'ALL' to show all successful launches by site
+        filtered_df = spacex_df
+        fig = px.pie(
+            filtered_df,
+            names='Launch Site',
+            title='Total Successful Launches for All Sites'
+        )
+    else:
+        # Filter based on the selected site and include all class (0 and 1) data
+        filtered_df = spacex_df[spacex_df['Launch Site'] == entered_site]
+        fig = px.pie(
+            filtered_df,
+            names='class',
+            title=f'Total Launches for {entered_site}'
+        )
     return fig
+
 
 # TASK 4:
 # Add a callback function for `site-dropdown` and `payload-slider` as inputs, `success-payload-scatter-chart` as output
