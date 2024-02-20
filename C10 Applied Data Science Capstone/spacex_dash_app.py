@@ -25,7 +25,7 @@ app.layout = html.Div(children=[html.H1('SpaceX Launch Records Dashboard',
                                 dcc.Dropdown(id='site-dropdown',
                                             options=[
                                                 {'label': 'All Sites', 'value': 'ALL'}] +
-                                                [{'label': site, 'value': site} for site in spacex_df['Launch Site'].unique()],
+                                                [{'label': site, 'value': site} for site in spacex_df['Launch Site'].unique().tolist()],
                                             value='ALL',
                                             placeholder="Select a Launch Site here",
                                             searchable=True),
@@ -57,22 +57,25 @@ app.layout = html.Div(children=[html.H1('SpaceX Launch Records Dashboard',
 )
 def get_pie_chart(entered_site):
     if entered_site == 'ALL':
-        # Use the original DataFrame for 'ALL' to show all successful launches by site
-        filtered_df = spacex_df
+        # Show all successful launches by site
+        filtered_df = spacex_df[spacex_df['class'] == 1]
         fig = px.pie(
             filtered_df,
             names='Launch Site',
-            title='Total Successful Launches for All Sites'
+            title='Total Successful Launches for All Sites',
+            hole=0.132  # Optional: Add a hole for a donut-like pie chart
         )
     else:
-        # Filter based on the selected site and include all class (0 and 1) data
+        # Filter based on the selected site and show count of successes and failures
         filtered_df = spacex_df[spacex_df['Launch Site'] == entered_site]
         fig = px.pie(
             filtered_df,
             names='class',
-            title=f'Total Launches for {entered_site}'
+            title=f'Total Launches for Site {entered_site}',
+            hole=0.132  # Optional: Add a hole for a donut-like pie chart
         )
     return fig
+
 
 
 # TASK 4:
